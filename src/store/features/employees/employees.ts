@@ -23,6 +23,9 @@ export const createEmployeeAction = createAction(
     } as any) as EmployeeEntity,
   })
 );
+export const createManyEmployeeAction = createAction<EmployeeEntity[]>(
+  "employee/addMany"
+);
 export const removeEmployeeAction = createAction<EmployeeId>("employee/remove");
 
 export type ColleaguesUpdate = {
@@ -54,6 +57,11 @@ export const { reducer } = createSlice({
     builder
       .addCase(createEmployeeAction, (state, { payload }) => {
         employeeAdapter.addOne(state, payload);
+
+        state.selectedEmployeeId = payload.id;
+      })
+      .addCase(createManyEmployeeAction, (state, { payload }) => {
+        employeeAdapter.addMany(state, payload);
       })
       .addCase(removeEmployeeAction, (state, { payload }) => {
         state.selectedEmployeeId = "";

@@ -1,5 +1,4 @@
 import React from "react";
-import { unstable_batchedUpdates } from "react-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { Fab, Tooltip, makeStyles } from "@material-ui/core";
 import { nanoid } from "nanoid";
@@ -10,7 +9,7 @@ import type { EmployeePositionEntity, EmployeeEntity } from "store/models";
 
 import { Gender, IsFiredState } from "store/models";
 import { selectAllPositions } from "store/features/positions";
-import { createEmployeeAction } from "store/features/employees";
+import { createManyEmployeeAction } from "store/features/employees";
 
 const useStyles = makeStyles((theme) => ({
   absolute: {
@@ -74,11 +73,7 @@ function RandomizeButton() {
       employee.colleagues = colleagues;
     }
 
-    unstable_batchedUpdates(() => {
-      for (let index = 0; index < employeeCount; index++) {
-        dispatch(createEmployeeAction(employees[index]));
-      }
-    });
+    dispatch(createManyEmployeeAction(employees));
   };
 
   return (

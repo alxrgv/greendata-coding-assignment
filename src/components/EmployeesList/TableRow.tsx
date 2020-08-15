@@ -71,6 +71,8 @@ function TableRow({ data }: WithoutChildren<TableRowProps>) {
       if (expanded) {
         expand(false);
       }
+    } else {
+      expand(true);
     }
   }, [data.id, expanded, selectedEmployeeId]);
 
