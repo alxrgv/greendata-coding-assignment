@@ -60,6 +60,9 @@ function ColleaguesTab(props: WithoutChildren) {
 
   const employeesCount = employees.length;
   const isEditingSelectedEmployee = selectedEmployee !== EMPTY_EMPLOYEE;
+  const employee = isEditingSelectedEmployee
+    ? selectedEmployee
+    : pendingEmployee;
 
   return (
     <TabPanel name="employeeColleagues">
@@ -68,14 +71,11 @@ function ColleaguesTab(props: WithoutChildren) {
           <>
             <CardHeader
               className={classes.cardHeader}
-              subheader={`${selectedEmployee.colleagues.length} / ${employeesCount}`}
+              subheader={`${employee.colleagues.length} / ${employeesCount}`}
             />
             <Divider />
             <List className={classes.list}>
               {employees.map(({ fullname, position, id: colleagueId }) => {
-                const employee = isEditingSelectedEmployee
-                  ? selectedEmployee
-                  : pendingEmployee;
                 return (
                   <ListItem key={colleagueId} component="li">
                     <ListItemIcon>
