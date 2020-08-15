@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/greendata-test/static/js/main.118d38c1.chunk.js",
-    "main.js.map": "/greendata-test/static/js/main.118d38c1.chunk.js.map",
+    "main.js": "/greendata-test/static/js/main.6ebbbd0b.chunk.js",
+    "main.js.map": "/greendata-test/static/js/main.6ebbbd0b.chunk.js.map",
     "runtime-main.js": "/greendata-test/static/js/runtime-main.4ccab69a.js",
     "runtime-main.js.map": "/greendata-test/static/js/runtime-main.4ccab69a.js.map",
-    "static/js/2.afdf0919.chunk.js": "/greendata-test/static/js/2.afdf0919.chunk.js",
-    "static/js/2.afdf0919.chunk.js.map": "/greendata-test/static/js/2.afdf0919.chunk.js.map",
+    "static/js/2.d2ca733d.chunk.js": "/greendata-test/static/js/2.d2ca733d.chunk.js",
+    "static/js/2.d2ca733d.chunk.js.map": "/greendata-test/static/js/2.d2ca733d.chunk.js.map",
     "static/js/3.2feae5e1.chunk.js": "/greendata-test/static/js/3.2feae5e1.chunk.js",
     "static/js/3.2feae5e1.chunk.js.map": "/greendata-test/static/js/3.2feae5e1.chunk.js.map",
     "index.html": "/greendata-test/index.html",
-    "static/js/2.afdf0919.chunk.js.LICENSE.txt": "/greendata-test/static/js/2.afdf0919.chunk.js.LICENSE.txt"
+    "static/js/2.d2ca733d.chunk.js.LICENSE.txt": "/greendata-test/static/js/2.d2ca733d.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.4ccab69a.js",
-    "static/js/2.afdf0919.chunk.js",
-    "static/js/main.118d38c1.chunk.js"
+    "static/js/2.d2ca733d.chunk.js",
+    "static/js/main.6ebbbd0b.chunk.js"
   ]
 }
