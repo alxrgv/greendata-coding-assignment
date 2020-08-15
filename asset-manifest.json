@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/greendata-test/static/js/main.6ebbbd0b.chunk.js",
-    "main.js.map": "/greendata-test/static/js/main.6ebbbd0b.chunk.js.map",
+    "main.js": "/greendata-test/static/js/main.26eaf86c.chunk.js",
+    "main.js.map": "/greendata-test/static/js/main.26eaf86c.chunk.js.map",
     "runtime-main.js": "/greendata-test/static/js/runtime-main.4ccab69a.js",
     "runtime-main.js.map": "/greendata-test/static/js/runtime-main.4ccab69a.js.map",
     "static/js/2.d2ca733d.chunk.js": "/greendata-test/static/js/2.d2ca733d.chunk.js",
@@ -14,6 +14,6 @@
   "entrypoints": [
     "static/js/runtime-main.4ccab69a.js",
     "static/js/2.d2ca733d.chunk.js",
-    "static/js/main.6ebbbd0b.chunk.js"
+    "static/js/main.26eaf86c.chunk.js"
   ]
 }
