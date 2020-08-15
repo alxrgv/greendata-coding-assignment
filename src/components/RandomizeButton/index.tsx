@@ -1,12 +1,12 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { Fab, Tooltip, makeStyles } from "@material-ui/core";
 import { nanoid } from "nanoid";
 import Autorenew from "@material-ui/icons/Autorenew";
 
-import type { StoreState } from "store";
-import type { EmployeePositionEntity, EmployeeEntity } from "store/models";
+import type { EmployeeEntity } from "store/models";
 
+import { useSelector } from "store";
 import { Gender, IsFiredState } from "store/models";
 import { selectAllPositions } from "store/features/positions";
 import { createManyEmployeeAction } from "store/features/employees";
@@ -22,9 +22,9 @@ const useStyles = makeStyles((theme) => ({
 function RandomizeButton() {
   const classes = useStyles();
   const dispatch = useDispatch();
-  const availablePositions = useSelector<StoreState>((state) =>
+  const availablePositions = useSelector((state) =>
     selectAllPositions(state.positions)
-  ) as EmployeePositionEntity[];
+  );
 
   const generateRandomEmployees = async () => {
     const Faker = await import("faker/locale/ru");

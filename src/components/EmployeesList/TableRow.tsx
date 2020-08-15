@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { makeStyles } from "@material-ui/core/styles";
 import {
   Box,
@@ -16,10 +16,10 @@ import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
 
 import { mainTableConfig, nestedTableConfig } from "./config";
-import type { StoreState } from "store";
-import type { Employee, EmployeeId, EmployeeEntity } from "store/models";
+import type { EmployeeId, EmployeeEntity } from "store/models";
 import type { WithoutChildren } from "types/children";
 
+import { useSelector } from "store";
 import {
   markEmployeeIdAsSelectedAction,
   selectedEmployeeIdSelector,
@@ -44,13 +44,13 @@ function TableRow({ data }: WithoutChildren<TableRowProps>) {
   const classes = useRowStyles();
   const dispatch = useDispatch();
 
-  const currentDenormalizedEmployee = useSelector<StoreState>((state) =>
+  const currentDenormalizedEmployee = useSelector((state) =>
     selectDenormalizedEmployee(state, data)
-  ) as Employee;
+  )!;
 
-  const selectedEmployeeId = useSelector<StoreState>((state) =>
+  const selectedEmployeeId = useSelector((state) =>
     selectedEmployeeIdSelector(state.employees)
-  ) as EmployeeId;
+  );
 
   const [expanded, expand] = React.useState(false);
 
@@ -120,7 +120,7 @@ function TableRow({ data }: WithoutChildren<TableRowProps>) {
                   </TableHead>
                   <TableBody>
                     {colleaguesKeys.length > 0 ? (
-                      colleaguesKeys.map((colleagueKey: string) => {
+                      colleaguesKeys.map((colleagueKey: EmployeeId) => {
                         const colleague =
                           currentDenormalizedEmployee.colleagues[colleagueKey];
 

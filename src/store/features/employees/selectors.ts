@@ -2,6 +2,7 @@ import { createSelector, Dictionary } from "@reduxjs/toolkit";
 
 import type { StoreState } from "store";
 import type {
+  Employee,
   EmployeeId,
   EmployeeEntity,
   EmployeePositionEntity,
@@ -26,16 +27,19 @@ const denormalizeEmployee = (
   positionEntites: Dictionary<EmployeePositionEntity>
 ) => {
   const employeePosition = positionEntites[emp.position]!.value;
-  const colleagues = emp.colleagues.reduce((acc, colleagueKey) => {
-    const { colleagues, ...colleague } = employeeEntities[colleagueKey]!;
-    const colleaguePosition = positionEntites[colleague.position]!.value;
+  const colleagues: Record<string, Employee> = emp.colleagues.reduce(
+    (acc, colleagueKey) => {
+      const { colleagues, ...colleague } = employeeEntities[colleagueKey]!;
+      const colleaguePosition = positionEntites[colleague.position]!.value;
 
-    (acc as any)[colleagueKey] = {
-      ...colleague,
-      position: colleaguePosition,
-    };
-    return acc;
-  }, {});
+      (acc as any)[colleagueKey] = {
+        ...colleague,
+        position: colleaguePosition,
+      };
+      return acc;
+    },
+    {}
+  );
 
   return {
     ...emp,

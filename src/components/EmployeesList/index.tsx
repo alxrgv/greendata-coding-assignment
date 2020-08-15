@@ -1,5 +1,4 @@
 import React from "react";
-import { useSelector } from "react-redux";
 import {
   Table as MUITable,
   TableBody,
@@ -12,10 +11,9 @@ import {
   makeStyles,
 } from "@material-ui/core";
 
-import type { StoreState } from "store";
-import type { EmployeeEntity } from "store/models";
 import type { WithoutChildren } from "types/children";
 
+import { useSelector } from "store";
 import { mainTableConfig } from "./config";
 import { TableRow } from "./TableRow";
 import { selectAllEmployees } from "store/features/employees";
@@ -29,9 +27,7 @@ const useStyles = makeStyles(() => ({
 
 function EmployeesList(props: WithoutChildren) {
   const classes = useStyles();
-  const employees = useSelector<StoreState>((state) =>
-    selectAllEmployees(state.employees)
-  ) as EmployeeEntity[];
+  const employees = useSelector((state) => selectAllEmployees(state.employees));
 
   return (
     <Paper className={classes.listContainer}>

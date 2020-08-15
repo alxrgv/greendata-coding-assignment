@@ -1,5 +1,5 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import {
   makeStyles,
   Checkbox,
@@ -14,10 +14,9 @@ import {
   Divider,
 } from "@material-ui/core";
 
-import type { StoreState } from "store";
-import type { Employee, EmployeeEntity } from "store/models";
 import type { WithoutChildren } from "types/children";
 
+import { useSelector } from "store";
 import { updatePendingEmployeeAction } from "./state";
 import {
   updateEmployeeAction,
@@ -50,13 +49,13 @@ function ColleaguesTab(props: WithoutChildren) {
 
   const { pendingEmployee, dispatch: localDispatch } = useEmployeeInformation();
 
-  const selectedEmployee = useSelector<StoreState>((state) =>
+  const selectedEmployee = useSelector((state) =>
     selectedEmployeeSelector(state.employees)
-  ) as EmployeeEntity;
+  )!;
 
-  const employees = useSelector<StoreState>((state) =>
+  const employees = useSelector((state) =>
     selectAllDenormalizedEmployees(state)
-  ) as Employee[];
+  );
 
   const employeesCount = employees.length;
   const isEditingSelectedEmployee = selectedEmployee !== EMPTY_EMPLOYEE;
@@ -88,7 +87,7 @@ function ColleaguesTab(props: WithoutChildren) {
                           isEditingSelectedEmployee
                             ? dispatch(
                                 updateEmployeeAction({
-                                  id: selectedEmployee.id,
+                                  id: selectedEmployee!.id,
                                   changes: {
                                     colleagues: {
                                       id: colleagueId,

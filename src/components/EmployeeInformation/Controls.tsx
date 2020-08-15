@@ -1,12 +1,11 @@
 import React, { memo } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { makeStyles, Paper, Button, Box } from "@material-ui/core";
 import clsx from "clsx";
 
-import type { StoreState } from "store";
-import type { EmployeeId } from "store/models";
 import type { WithoutChildren } from "types/children";
 
+import { useSelector } from "store";
 import {
   updatePendingEmployeeAction,
   clearPendingEmployeeAction,
@@ -40,9 +39,9 @@ const useStyles = makeStyles((theme) => ({
 function ControlsBase(props: WithoutChildren) {
   const classes = useStyles();
   const dispatch = useDispatch();
-  const selectedEmployeeId = useSelector<StoreState>((state) =>
+  const selectedEmployeeId = useSelector((state) =>
     selectedEmployeeIdSelector(state.employees)
-  ) as EmployeeId;
+  );
 
   const { pendingEmployee, dispatch: localDispatch } = useEmployeeInformation();
 

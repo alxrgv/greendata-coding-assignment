@@ -1,5 +1,5 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import {
   Grid,
   FormControl,
@@ -16,10 +16,9 @@ import {
 } from "@material-ui/core";
 import { DatePicker } from "@material-ui/pickers";
 
-import type { StoreState } from "store";
-import type { EmployeeEntity, EmployeePositionEntity } from "store/models";
 import type { WithoutChildren } from "types/children";
 
+import { useSelector } from "store";
 import { updatePendingEmployeeAction } from "./state";
 import { TabPanel } from "./TabPanel";
 import { useEmployeeInformation } from "./context";
@@ -34,13 +33,11 @@ function DescriptionTab(props: WithoutChildren) {
   const dispatch = useDispatch();
   const { pendingEmployee, dispatch: localDispatch } = useEmployeeInformation();
 
-  const selectedEmployee = useSelector<StoreState>((state) =>
+  const selectedEmployee = useSelector((state) =>
     selectedEmployeeSelector(state.employees)
-  ) as EmployeeEntity;
+  )!;
 
-  const positions = useSelector<StoreState>((state) =>
-    selectAllPositions(state.positions)
-  ) as EmployeePositionEntity[];
+  const positions = useSelector((state) => selectAllPositions(state.positions));
 
   const isEditingSelectedEmployee = selectedEmployee !== EMPTY_EMPLOYEE;
   const currentEmployee =
