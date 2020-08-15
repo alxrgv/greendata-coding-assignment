@@ -6,11 +6,8 @@ import clsx from "clsx";
 import type { WithoutChildren } from "types/children";
 
 import { useSelector } from "store";
-import {
-  updatePendingEmployeeAction,
-  clearPendingEmployeeAction,
-} from "./state";
-import { EMPTY_ID, EMPTY_EMPLOYEE } from "store/models";
+import { clearPendingEmployeeAction } from "./state";
+import { EMPTY_ID } from "store/models";
 import { useEmployeeInformation } from "./context";
 import {
   selectedEmployeeIdSelector,
@@ -47,7 +44,7 @@ function ControlsBase(props: WithoutChildren) {
 
   const add = () => {
     dispatch(createEmployeeAction(pendingEmployee));
-    localDispatch(updatePendingEmployeeAction({ changes: EMPTY_EMPLOYEE }));
+    localDispatch(clearPendingEmployeeAction());
   };
 
   const remove = () => {

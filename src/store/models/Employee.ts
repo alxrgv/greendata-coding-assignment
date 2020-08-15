@@ -33,6 +33,7 @@ export interface EmployeeEntity
 }
 
 export const EMPTY_ID = "";
+export const EMPTY_COLLEAGUES = [];
 export const EMPTY_EMPLOYEE: EmployeeEntity = {
   id: EMPTY_ID,
   fullname: "",
@@ -40,5 +41,5 @@ export const EMPTY_EMPLOYEE: EmployeeEntity = {
   birthday: null,
   gender: Gender.Unknown,
   isFired: IsFiredState.No,
-  colleagues: [],
+  colleagues: EMPTY_COLLEAGUES,
 };
