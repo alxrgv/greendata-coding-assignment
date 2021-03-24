@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.js": "/greendata-test/static/js/main.8c14afa6.chunk.js",
-    "main.js.map": "/greendata-test/static/js/main.8c14afa6.chunk.js.map",
-    "runtime-main.js": "/greendata-test/static/js/runtime-main.7d7ba7ca.js",
-    "runtime-main.js.map": "/greendata-test/static/js/runtime-main.7d7ba7ca.js.map",
-    "static/js/2.289d1c57.chunk.js": "/greendata-test/static/js/2.289d1c57.chunk.js",
-    "static/js/2.289d1c57.chunk.js.map": "/greendata-test/static/js/2.289d1c57.chunk.js.map",
-    "static/js/3.f39b6b89.chunk.js": "/greendata-test/static/js/3.f39b6b89.chunk.js",
-    "static/js/3.f39b6b89.chunk.js.map": "/greendata-test/static/js/3.f39b6b89.chunk.js.map",
-    "index.html": "/greendata-test/index.html",
-    "static/js/2.289d1c57.chunk.js.LICENSE.txt": "/greendata-test/static/js/2.289d1c57.chunk.js.LICENSE.txt"
+    "main.js": "/greendata-coding-assignment/static/js/main.8c14afa6.chunk.js",
+    "main.js.map": "/greendata-coding-assignment/static/js/main.8c14afa6.chunk.js.map",
+    "runtime-main.js": "/greendata-coding-assignment/static/js/runtime-main.c70e43ec.js",
+    "runtime-main.js.map": "/greendata-coding-assignment/static/js/runtime-main.c70e43ec.js.map",
+    "static/js/2.289d1c57.chunk.js": "/greendata-coding-assignment/static/js/2.289d1c57.chunk.js",
+    "static/js/2.289d1c57.chunk.js.map": "/greendata-coding-assignment/static/js/2.289d1c57.chunk.js.map",
+    "static/js/3.f39b6b89.chunk.js": "/greendata-coding-assignment/static/js/3.f39b6b89.chunk.js",
+    "static/js/3.f39b6b89.chunk.js.map": "/greendata-coding-assignment/static/js/3.f39b6b89.chunk.js.map",
+    "index.html": "/greendata-coding-assignment/index.html",
+    "static/js/2.289d1c57.chunk.js.LICENSE.txt": "/greendata-coding-assignment/static/js/2.289d1c57.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.7d7ba7ca.js",
+    "static/js/runtime-main.c70e43ec.js",
     "static/js/2.289d1c57.chunk.js",
     "static/js/main.8c14afa6.chunk.js"
   ]
